@@ -1,0 +1,474 @@
+﻿
+@{
+    ViewBag.Title = "JSBasics";
+}
+
+<style>
+    button.wideButton {
+        width: 100%;
+        height: 50px;
+    }
+
+    button.modalButton {
+        width: 20%;
+        background-color: cadetblue;
+        color: black;
+        font-size: larger;
+    }
+
+    hr {
+        border: 5px solid black;
+        background-color: darkorange;
+        height: 8px;
+    }
+
+    span.fizz-buzz {
+        color: purple;
+        font-size: x-large;
+    }
+
+    span.fizz {
+        color: blue;
+        font-size: larger;
+    }
+
+    span.buzz {
+        color: red;
+        font-size: larger;
+    }
+
+    span.loop {
+        color: black;
+        font-size: larger;
+        font-family: 'Comic Sans MS';
+        font-weight: 900;
+    }
+
+    #btnShowCode {
+        width: 100px;
+    }
+
+
+
+</style>
+
+<h2>JS Basics</h2>
+
+@*This Action will eventually have to be moved in one way or the other
+    into our template once the template has been worked in*@
+
+<div class="row text-center h3">
+    Demo view for triggering various Modals
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-info wideButton" data-toggle="modal" data-target="#mathModal">Math</button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-warning wideButton" data-toggle="modal" data-target="#factorialModal">Factorial</button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary wideButton" data-toggle="modal" data-target="#fizzbuzzModal">Fizz-Buzz</button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-success wideButton" data-toggle="modal" data-target="#palindromeModal">Palindrome</button>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <button class="btn btn-lg btn-danger wideButton" data-toggle="modal" data-target="#allModal">All Exercises</button>
+    </div>
+</div>
+
+@*Modals go here*@
+
+<div id="mathModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>MATH MODAL</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modalButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="factorialModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>FACTORIAL MODAL</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modalButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="fizzbuzzModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">                   
+                    <div class="row">
+                        <div class="col-md-10">
+                            Enter two numbers:
+                        </div>
+                        <div class="col-md-1">
+                            <input class="form-control"/>
+                        </div>
+                        <div class="col-md-1">
+                            <input class="form-control" />
+                        </div>
+                    </div>                                 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modalButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="palindromeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>PALINDROME MODAL</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modalButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="allModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#math">Math</a></li>
+                    <li><a data-toggle="pill" href="#factorial">Factorial</a></li>
+                    <li><a data-toggle="pill" href="#fizzbuzz">Fizz-Buzz</a></li>
+                    <li><a data-toggle="pill" href="#palindrome">Palindrome</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="math" class="tab-pane fade in active">
+                        <h3>HOME</h3>
+                        <p>Some content.</p>
+                    </div>
+                    <div id="factorial" class="tab-pane fade">
+                        <div class="container-fluid">
+                            <div class="row text-center h3">
+                                Welcome to the Faxctorial exercise
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-6">Enter number:</div>
+                                        <div class="col-md-6">
+                                            <input type="number" id="factNum" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn btn-primary" id="btnFact">Calculate</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center h4">RESULT</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center h4">
+                                            <p id="factResult"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div id="fizzbuzz" class="tab-pane fade">
+                        <div class="row text-center h3">
+                            Welcome to Fizz-Buzz...
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <span>Enter number 1: </span> <input id="txtFizz" type="number" />
+                        </div>
+                        <div class="row">
+                            <span>Enter number 2: </span> <input id="txtBuzz" type="number" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <button id="btnFB" class="btn btn-success btn-lg">Calculate</button>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <p id="fbOut"></p>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <p id="fbOut2"></p>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button class="btn btn-primary" id="btnShowCode">Show Code</button>
+                            </div>
+                            <div class="col-md-9">
+                                <div id="codeWindow">
+                                    <pre class="brush: js">
+                                         function FizzBuzz2(num1, num2) {
+                                            var output = "";
+                                            for (var loop = 1; loop <= 100; loop++) {
+                                                if (loop % num1 == 0 && loop % num2 == 0)
+                                                    output += "<span class='fizz-buzz'>Fizz-Buzz</span>, ";
+                                                else if (loop % num1 == 0)
+                                                    output += "<span class='fizz'>Fizz</span>, ";
+                                                else if (loop % num2 == 0)
+                                                    output += "<span class='buzz'>Buzz</span>, ";
+                                                else
+                                                    output += "<span class='loop'>" + loop + "</span>, ";
+                                            }
+
+                                            return output.substr(0, output.length - 2);
+                                        }
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div id="palindrome" class="tab-pane fade">
+                        <div class="container-fluid">
+                            <div class="row text-center h3">
+                                Welcome to the Palindrome exercise
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-6">Enter Word:</div>
+                                        <div class="col-md-6">
+                                            <input type="text" id="txtWord" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn btn-primary" id="btnPalindrome">Check!</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center h4">RESULT</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center h4">
+                                            <p id="palindromeResult"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modalButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        $(function () {
+
+            $("#codeWindow").hide();
+
+            $("#btnShowCode").click(function () {
+                $("#codeWindow").toggle();        
+                var text = $(this).text();
+                if (text == "Show Code") {
+                    $(this).text("Hide Code");
+                }
+                else {
+                    $(this).text("Show Code");
+                }
+
+
+
+            });
+        });
+
+
+    </script>
+
+
+
+    <script>
+        $("#btnFact").click(function () {
+            //Step 1: Get the data
+            var number1 = Number($("#factNum").val());
+
+            //Step 2: Do my calculation
+            var result = Factorial(number1);
+
+            //Step 3: Output the result
+            $("#factResult").text(result);
+
+        });
+
+        $("#btnPalindrome").click(function () {
+            //Step 1: Get the user input
+            var input = $("#txtWord").val().toLowerCase();
+
+            //Step 2: Run it through the ReverseAString method
+            var output = ReverseAString3(input);
+
+            //Step 3: Compare it to the original and write the appropriate output
+            if (input == output) {
+                $("#palindromeResult").text("The word " + input + " reversed equals " + output + ". These two are the same and therefore " + input + " is a Palindrome!");
+            }
+            else {
+                $("#palindromeResult").text("The word " + input + " reversed equals " + output + ". These two are NOT the same and therefore " + input + " is NOT a Palindrome!");
+            }
+        });
+
+        function Factorial(number) {
+            //For loop
+            for (var loop = number - 1; loop > 1; loop--) {
+                number *= loop;
+            }
+            return number;
+        }
+
+        function ReverseAString1(word) {
+            var output = "";
+            for (var index = word.length - 1; index >= 0; index--) {
+                output += word.substr(index, 1);
+            }
+            return output;
+        }
+
+        function ReverseAString3(word) {
+            var output = "";
+
+            for (var index = word.length - 1; index >= 0; index--) {
+                var character = word[index];
+                output += character;
+            }
+            return output;
+        }
+
+        function ReverseAString4(word) {
+            return word.split('').reverse().join('');
+        }
+
+        $("#btnFB").click(function () {
+            var num1 = +$("#txtFizz").val();
+            var num2 = +$("#txtBuzz").val();
+
+            var output1 = FizzBuzz(num1, num2);
+            var output2 = FizzBuzz2(num1, num2);
+
+            $("#fbOut").html(output1);
+            $("#fbOut2").html(output2);
+        });
+
+        function FizzBuzz(num1, num2) {
+            var output = new Array();
+            for (var loop = 1; loop <= 100; loop++) {
+                //var fizz = loop % num1;
+                //var buzz = loop % num2;
+
+                //if (!fizz && !buzz)
+                //    output.push("<span class='fizz-buzz'>Fizz-Buzz</span>");
+                //else if (!fizz)
+                //    output.push("<span class='fizz'>Fizz</span>");
+                //else if (!buzz)
+                //    output.push("<span class='buzz'>Buzz</span>");
+                //else
+                //    output.push(loop);
+
+                var fizz = loop % num1 == 0;
+                var buzz = loop % num2 == 0;
+
+                if (fizz && buzz)
+                    output.push("<span class='fizz-buzz'>Fizz-Buzz</span>");
+                else if (fizz)
+                    output.push("<span class='fizz'>Fizz</span>");
+                else if (buzz)
+                    output.push("<span class='buzz'>Buzz</span>");
+                else
+                    output.push("<span class='loop'>" + loop + "</span>");
+            }
+            return output.join(', ');
+        }
+
+        function FizzBuzz2(num1, num2) {
+            var output = "";
+            for (var loop = 1; loop <= 100; loop++) {
+                if (loop % num1 == 0 && loop % num2 == 0)
+                    output += "<span class='fizz-buzz'>Fizz-Buzz</span>, ";
+                else if (loop % num1 == 0)
+                    output += "<span class='fizz'>Fizz</span>, ";
+                else if (loop % num2 == 0)
+                    output += "<span class='buzz'>Buzz</span>, ";
+                else
+                    output += "<span class='loop'>" + loop + "</span>, ";
+            }
+
+            return output.substr(0, output.length - 2);
+        }
+
+    </script>
+
+}
+
+
+
